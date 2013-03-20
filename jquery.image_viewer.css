@@ -1,0 +1,40 @@
+.imageViewer-container {}
+	.imageViewer-image-link {
+		float: left;
+	}
+	.imageViewer-image {
+		float: left;
+	}
+		.imageViewer-image a {}
+			.imageViewer-image a img {}
+			
+	
+	.imageViewer-images-list {
+		float: left;
+		padding: 0 0 0 1em;
+	}
+	.imageViewer-roller-prev-link {}
+	.imageViewer-roller-next-link {}
+	
+	.imageViewer-roller-items {
+		padding: 0;
+		margin: 0;
+		
+	}
+	
+		.imageViewer-roller-item {
+			padding: 0;
+			margin: 0;
+		}
+		
+			.imageViewer-roller-item.imageViewer-roller-item-active {
+				border: 1px solid red;
+			}
+			
+			.imageViewer-roller-item.imageViewer-roller-item-hidden {
+				display: none;
+			}
+			
+		.imageViewer-roller-item.imageViewer-roller-item-hidden {
+			display: none;
+		}
