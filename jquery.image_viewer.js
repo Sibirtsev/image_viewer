@@ -62,9 +62,9 @@
 			
 			if (countImages > 1) {
 				this.appendRoller(this.options.start);
+				this.appendImageLinks();
 			}
 			this.displayImage(this.options.start);
-			this.appendImageLinks();
         },
 
         createContainer: function() {
@@ -288,7 +288,9 @@
 			
 			var $link = $('<a href="#next" data-number="' + position + '" />');
 			$link.click(function() {
-				_this.displayImage(position + 1);
+				if (_this.links.length > 1) {
+					_this.displayImage(position + 1);
+				}
 				return false;
 			});
 			
