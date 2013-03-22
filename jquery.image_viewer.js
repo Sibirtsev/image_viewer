@@ -278,7 +278,7 @@
 				}
 			});
 			
-			if (scroll && direction > 0 && (position == this.roller.displayed[2] + 1 || position == 0)) {
+			if (scroll && direction > 0 && (position == this.roller.displayed[position == this.thumbs.length - 1] + 1 || position == 0)) {
 				this.scrollRoller(direction);
 			}
 			
