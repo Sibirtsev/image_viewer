@@ -1,7 +1,7 @@
 ;(function ( $, window, document, undefined ) {
     var pluginName = "imageViewer",
         defaults = {
-            start: 1,
+            start: 0,
 			show: 5,
 			prevLinkContent: '<<<',
 			nextLinkContent: '>>>',
@@ -21,10 +21,10 @@
 		this.links = [];
 		this.thumbs = [];
 
-		this.displayed = 1;
+		this.displayed = 0;
 		
 		this.roller = {
-			lastDisplayed: 1,
+			lastDisplayed: 0,
 			displayed: [],
 			height: 0,
 			width: 0
@@ -64,7 +64,7 @@
 				this.appendRoller(this.options.start);
 				this.appendImageLinks();
 			}
-			this.displayImage(this.options.start);
+			this.displayImage(this.options.start, false, 0);
         },
 
         createContainer: function() {
@@ -190,8 +190,7 @@
 				start = 0;
 			}
 			
-			for (var i = 0; i < this.options.show; i++) {
-				position = start + i;
+			for (var i = 0, position = start; i < this.options.show; i++, position++) {
 				if (position > this.thumbs.length - 1) {
 					position = 0;
 				}
@@ -278,7 +277,7 @@
 				}
 			});
 			
-			if (scroll && direction > 0 && (position == this.roller.displayed[position == this.thumbs.length - 1] + 1 || position == 0)) {
+			if (scroll && direction > 0 && (position == this.roller.displayed[this.options.show - 1] + 1 || position == 0)) {
 				this.scrollRoller(direction);
 			}
 			
